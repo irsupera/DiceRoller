@@ -28,6 +28,29 @@ namespace DiceRoller.Models
             Roll();
         }
 
+        public void Roll()
+        {
+            Random r = new Random();
+            CurrentSide = r.Next(NumberSides)+1;
+        }
+
+        public int CountRoll(int numberSides)
+        {
+
+            int ctr = 0;
+
+            while (ctr >= 0)
+            {
+                ctr++;
+                Roll();
+                if (CurrentSide == numberSides)
+                {
+                    break;
+                }
+            }
+            return ctr;
+
+        }
     }
 }
 
