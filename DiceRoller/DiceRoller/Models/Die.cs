@@ -34,23 +34,20 @@ namespace DiceRoller.Models
             CurrentSide = r.Next(NumberSides)+1;
         }
 
-        public int CountRoll(int numberSides)
+        public void SetSideUp(int newSideUp)
         {
-
-            int ctr = 0;
-
-            while (ctr >= 0)
+            if(newSideUp >= 1 && newSideUp <= NumberSides)
             {
-                ctr++;
-                Roll();
-                if (CurrentSide == numberSides)
-                {
-                    break;
-                }
+                CurrentSide = newSideUp;
             }
-            return ctr;
-
         }
+
+        public string GetName() { return Name; }
+
+        public int GetNumberSides() { return NumberSides; }
+
+        public int GetCurrentSide() { return CurrentSide; }
+
     }
 }
 
