@@ -27,7 +27,7 @@ namespace DiceRoller
 
             Die d1 = new Die(numberSide);
 
-            Result1.Text = d1.CurrentSide.ToString();
+            Result1.Text = "'" +  d1.CurrentSide.ToString() + "'";
         }
 
         public void DisplayTwo(object sender, EventArgs e)
@@ -43,8 +43,8 @@ namespace DiceRoller
             Die d1 = new Die(numberSide);
             Die d2 = new Die(numberSide);
 
-            Result1.Text = d1.CurrentSide.ToString();
-            Result2.Text = d2.CurrentSide.ToString();
+            Result1.Text = "'" + d1.CurrentSide.ToString() + "'";
+            Result2.Text = "'" + d2.CurrentSide.ToString() + "'";
         }
 
         public int getNumberSide()
