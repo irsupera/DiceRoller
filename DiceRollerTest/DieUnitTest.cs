@@ -10,12 +10,14 @@ namespace DiceRollerTest
         Die d = new Die();
 
         [TestMethod]
+        [TestCategory("Defaults")]
         public void DieNotNull()
         {
             d.Should().NotBeNull();
         }
 
         [TestMethod]
+        [TestCategory("Defaults")]
         public void DieHasAllDefaultValue()
         {
             d.Name.Should().Be("d6");
@@ -24,6 +26,7 @@ namespace DiceRollerTest
         }
 
         [TestMethod]
+        [TestCategory("Defaults")]
         public void DefaultRollSetsSideCorrectly()
         {
             for (int i = 0; i < 100; i++)
@@ -33,7 +36,36 @@ namespace DiceRollerTest
             }
         }
 
+        //[TestMethod]
+        //[TestCategory("Defaults")]
+        //public void DefaultRollSetsEachSide()
+        //{
+        //    bool one = false,
+        //         two = false,
+        //         three = false,
+        //         four = false,
+        //         five = false,
+        //         six = false;
+        //    for (int i = 0; i < 1000; i++)
+        //    {
+        //        d.Roll();
+        //        if (d.CurrentSide == 1) one = true;
+        //        else if(d.CurrentSide == 2) two = true;
+        //        else if(d.CurrentSide == 3) three = true;
+        //        else if(d.CurrentSide == 4) four = true;
+        //        else if(d.CurrentSide == 5) five = true;
+        //        else if(d.CurrentSide == 6) six = true;
+        //    }
+        //    one.Should().BeTrue();
+        //    two.Should().BeTrue();
+        //    three.Should().BeTrue();
+        //    four.Should().BeTrue();
+        //    five.Should().BeTrue();
+        //    six.Should().BeTrue();
+        //}
+
         [TestMethod]
+        [TestCategory("CustomSides")]
         [DataRow(3, "d3")]
         [DataRow(4, "d4")]
         [DataRow(8, "d8")]
@@ -46,6 +78,7 @@ namespace DiceRollerTest
         }
 
         [TestMethod]
+        [TestCategory("CustomNames")]
         [DataRow(3, "x", "x3")]
         [DataRow(4, "x", "x4")]
         [DataRow(8, "x", "x8")]
@@ -58,6 +91,7 @@ namespace DiceRollerTest
         }
 
         [TestMethod]
+        [TestCategory("CustomSides")]
         [DataRow(3)]
         [DataRow(4)]
         [DataRow(8)]
