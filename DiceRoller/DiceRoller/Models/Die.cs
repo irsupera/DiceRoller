@@ -3,9 +3,11 @@ namespace DiceRoller.Models
 {
     public class Die
     {
-        public string Name { get; set; }
-        public int NumberSides { get; set; }
-        public int CurrentSide { get; set; }
+        private string Name { get; set; }
+
+        private int NumberSides { get; set; }
+
+        private int CurrentSide { get; set; }
 
         public Die() // default constructor 0 argument
         {
@@ -37,9 +39,7 @@ namespace DiceRoller.Models
         public void SetSideUp(int newSideUp) // set current side up from argument
         {
             if(newSideUp >= 1 && newSideUp <= NumberSides)
-            {
                 CurrentSide = newSideUp;
-            }
         }
 
         public string GetName() { return Name; }
